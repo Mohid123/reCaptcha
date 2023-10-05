@@ -5,6 +5,8 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
       function onRecaptchaSuccess(token) {
+        event.preventDefault()
+        console.log(token)
         alert('Verified successfully')
       }
     </script>
