@@ -13,14 +13,11 @@
       function verify() {
         event.preventDefault();
         var captchResponse = document.getElementById('g-recaptcha-response')?.value
-        debugger
         console.log(captchResponse)
         if(captchResponse.length == 0 ) {
-          debugger
           alert('Please verify by clicking the checkbox')
         }
         else {
-          debugger
           alert('User has verified')
         }
       }
