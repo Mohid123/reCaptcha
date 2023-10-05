@@ -3,25 +3,16 @@
   <head>
     <title>reCAPTCHA demo: Simple page</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script>
-      function onRecaptchaSuccess(token) {
-        console.log(token)
-        alert('Verified successfully')
-      }
-    </script>
+     <script>
+       function onSubmit(token) {
+         document.getElementById("demo-form").submit();
+       }
+     </script>
   </head>
   <body>
-    <form action="" method="POST">
-      Name: <input type="text" name="name"><br>
-      <div class="g-recaptcha" data-sitekey="6LcSTXYoAAAAABmYWWHpi9cWN3wsLQ90lkE_PGbj"></div>
+    <form id="demo-form" action="" method="POST">
+      <button class="g-recaptcha" data-sitekey="6LcSTXYoAAAAABmYWWHpi9cWN3wsLQ90lkE_PGbj" data-callback="onSubmit">Submit</button>
       <br/>
-      <button
-        class="g-recaptcha"
-        data-sitekey="6LcSTXYoAAAAABmYWWHpi9cWN3wsLQ90lkE_PGbj"
-        data-callback="onRecaptchaSuccess"
-      >
-        Submit
-      </button>
     </form>
   </body>
 </html>
