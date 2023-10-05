@@ -5,8 +5,8 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
       function onSubmit(token) {
-        debugger
-        document.getElementById("demo-form").submit();
+        console.log(token)
+        alert('Verified successfully')
       }
     </script>
   </head>
