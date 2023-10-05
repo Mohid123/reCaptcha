@@ -27,7 +27,9 @@
     </script>
     <script>
       function onResponse(token) {
-        console.log('asdsd ads asd', token)
+        if(token) {
+          document.getElementById('sub-btn').removeAttribute("disabled","disabled")
+        }
       }
     </script>
   </head>
