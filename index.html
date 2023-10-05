@@ -7,18 +7,22 @@
         grecaptcha.render('html_element', {
           'sitekey' : '6LcSTXYoAAAAABmYWWHpi9cWN3wsLQ90lkE_PGbj'
         });
+        var captchResponse = document.getElementById('g-recaptcha-response')?.value
+        if(captchResponse.length > 0) {
+          debugger
+          document.getElementById('sub-btn').setAttribute("disabled","disabled")
+        }
       };
     </script>
     <script>
       function verify() {
         event.preventDefault();
         var captchResponse = document.getElementById('g-recaptcha-response')?.value
-        console.log(captchResponse)
         if(captchResponse.length == 0 ) {
-          alert('Please verify by clicking the checkbox')
+          alert('Please verify first by clicking the checkbox')
         }
         else {
-          alert('User has verified')
+          alert('User has verified successfully')
         }
       }
     </script>
@@ -27,7 +31,7 @@
     <form action="" method="POST">
       <div id="html_element"></div>
       <br>
-      <input type="submit" value="Submit" onclick="verify()">
+      <input id="sub-btn" type="submit" value="Submit" onclick="verify()">
     </form>
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
         async defer>
