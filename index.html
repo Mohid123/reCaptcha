@@ -4,7 +4,7 @@
     <title>reCAPTCHA demo: Simple page</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
-      function onSubmit(token) {
+      function onRecaptchaSuccess(token) {
         console.log(token)
         alert('Verified successfully')
       }
@@ -18,8 +18,7 @@
       <button
         class="g-recaptcha"
         data-sitekey="6LcSTXYoAAAAABmYWWHpi9cWN3wsLQ90lkE_PGbj"
-        data-callback='onSubmit'
-        data-action='submit'
+        data-callback="onRecaptchaSuccess"
       >
         Submit
       </button>
