@@ -31,11 +31,15 @@
           document.getElementById('sub-btn').removeAttribute("disabled","disabled")
         }
       }
+
+      function onExpired(val) {
+        console.log(val)
+      }
     </script>
   </head>
   <body>
     <form action="" method="POST">
-      <div id="html_element" data-callback="onResponse"></div>
+      <div id="html_element" data-callback="onResponse" data-expired-callback="onExpired"></div>
       <br>
       <input id="sub-btn" type="submit" value="Submit" onclick="verify()">
     </form>
